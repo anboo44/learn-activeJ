@@ -31,6 +31,9 @@ class UserController {
       }
   }
 
+  // Impl same as fn save
+  def update(request: HttpRequest): Promise[HttpResponse] = ???
+
   def getAll: HttpResponse = {
     val json = Json.toJson(userService.getAll)
     HttpResponse.ok200().withJson(json.toString())
