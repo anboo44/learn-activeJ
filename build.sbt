@@ -10,6 +10,7 @@ lazy val root = (project in file("."))
     name := "scala-activej",
     libraryDependencies ++= Seq(
       "ch.qos.logback" % "logback-classic" % "1.4.8",
-      "io.activej" % "activej-launchers-http" % "5.5"
+      "io.activej" % "activej-launchers-http" % "5.5",
+      "com.typesafe.play" %% "play-json" % "2.9.4"
     )
   )
