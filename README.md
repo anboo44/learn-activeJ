@@ -1,0 +1,1 @@
+# Use Scala with ActiveJ Framework
