@@ -1,17 +1,13 @@
 package controller
 
 import io.activej.http.{ HttpRequest, HttpResponse }
-import io.activej.inject.annotation.Inject
 import io.activej.promise.Promise
 import play.api.libs.json.Json
 import service.UserService
 
 import scala.util.{ Failure, Success }
 
-@Inject
-class UserController {
-
-  @Inject var userService: UserService = _
+class UserController(userService: UserService) {
 
   def save(request: HttpRequest): Promise[HttpResponse] = {
     request

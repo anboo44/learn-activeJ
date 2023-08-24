@@ -5,7 +5,7 @@ import scala.util.Random
 case class User (id: Long, firstName: String, lastName: String, age: Int)
 
 object User {
-  def apply(firstName: String, lastName: String, age: Int): User = {
+  def from(firstName: String, lastName: String, age: Int): User = {
     User(randomId, firstName, lastName, age)
   }
 

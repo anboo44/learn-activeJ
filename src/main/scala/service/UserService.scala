@@ -1,19 +1,15 @@
 package service
 
 import controller.UserDTO
-import io.activej.inject.annotation.Inject
 import model.User
 import repository.UserRepository
 
 import scala.util.Try
 
-@Inject
-class UserService {
-
-  @Inject var userRepository: UserRepository = _
+class UserService(userRepository: UserRepository) {
 
   def store(firstName: String, lastName: String, age: Int): Try[User] = {
-    val user = User(firstName, lastName, age)
+    val user = User.from(firstName, lastName, age)
     userRepository.store(user).map(_ => user)
   }
 
